@@ -23,6 +23,7 @@ namespace wpf_tutorial_com
         {
             InitializeComponent();
             //TODO: TESTE DE
+            //test
         }
 
     }
