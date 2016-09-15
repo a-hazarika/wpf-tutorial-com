@@ -1,0 +1,22 @@
+﻿<Window x:Class="wpf_tutorial_com.BindWithConversion"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:wpf_tutorial_com"
+        mc:Ignorable="d"
+        Title="BindWithConversion" Width="250" SizeToContent="Height">
+    
+    <Window.Resources>
+       <local:TextToBoolConverter x:Key="TextToBoolConverter"/>
+    </Window.Resources>
+    
+    <StackPanel Orientation="Vertical" Margin="10">
+        <TextBox x:Name="textBox_Input"/>
+        <WrapPanel Margin="0,10">
+            <TextBlock Text="Current Value is : "/>
+            <TextBlock Text="{Binding ElementName=textBox_Input, Path=Text, Converter={StaticResource TextToBoolConverter}}"/>
+        </WrapPanel>
+        <CheckBox IsChecked="{Binding ElementName=textBox_Input, Path=Text, Converter={StaticResource TextToBoolConverter}}" Content="Yes"/>
+    </StackPanel>
+</Window>

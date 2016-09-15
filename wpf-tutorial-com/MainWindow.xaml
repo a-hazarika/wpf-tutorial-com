@@ -1,0 +1,61 @@
+﻿<Window x:Class="wpf_tutorial_com.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:wpf_tutorial_com"
+        mc:Ignorable="d"
+        Title="WPF-Tutorial.com" Height="400" Width="300" ResizeMode="CanMinimize">
+
+    <Window.Resources>
+        <Style x:Key="buttonStyle" TargetType="Button">
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="Height" Value="50"/>
+            <Setter Property="FontSize" Value="18"/>
+            <!--<Setter Property="SnapsToDevicePixels" Value="True"/>-->
+        </Style>
+    </Window.Resources>
+    
+    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+        <StackPanel x:Name="mainStack" Orientation="Vertical" SnapsToDevicePixels="True">
+
+            <StackPanel.Resources>
+                <Style BasedOn="{StaticResource buttonStyle}" TargetType="{x:Type Button}"/>
+            </StackPanel.Resources>
+            
+            <Button x:Name="button_coloredText">
+
+                <WrapPanel Orientation="Horizontal">
+                    <TextBlock Text="Colo" Foreground="Blue"/>
+                    <TextBlock Text="red " Foreground="Red"/>
+                    <TextBlock Text="Text " Foreground="Green"/>
+                    <TextBlock Text="On " Foreground="Yellow"/>
+                    <TextBlock Text="Button" Foreground="Orange"/>
+                </WrapPanel>
+                
+            </Button>
+            
+            <Button x:Name="button_eventHandler" Content="Get Double Click Position"
+                    MouseDoubleClick="button_eventHandler_MouseDoubleClick"/>
+            
+            <Button x:Name="button_Exception" Content="Exceptions !" Click="button_Exception_Click"/>
+            
+            <TextBox Text="Single Line TextBox" FontSize="20" Margin="10"/>
+            
+            <TextBox Text="Multiple Line TextBox" FontSize="20" Margin="10" AcceptsReturn="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" Height="80"/>
+            
+            <Button x:Name="button_ShowSplitterScreen" Content="Splitter Test" Click="button_ShowSplitterScreen_Click" />
+
+            <Button x:Name="button_ShowContactInfoScreen" Content="Contact Info Sample" Click="button_ShowContactInfoScreen_Click"/>
+
+            <Button x:Name="button_HelloDataBinding" Content="Hello Data Binding" Click="button_HelloDataBinding_Click"/>
+
+            <Button x:Name="button_ObjectControlBindingSample" Content="Object-Control Binding" Click="button_ObjectControlBindingSample_Click"/>
+            
+            <Button x:Name="button_BindingWithConversion" Content="Bind with Conversion" Click="button_BindingWithConversion_Click"/>
+            
+            <Button x:Name="button_CommandSample" Content="Command Sample" Click="button_CommandSample_Click"/>
+            
+        </StackPanel>
+    </ScrollViewer>
+</Window>
