@@ -22,7 +22,7 @@
             <StackPanel.Resources>
                 <Style BasedOn="{StaticResource buttonStyle}" TargetType="{x:Type Button}"/>
             </StackPanel.Resources>
-            
+
             <Button x:Name="button_coloredText">
 
                 <WrapPanel Orientation="Horizontal">
