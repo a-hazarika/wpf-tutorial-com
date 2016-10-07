@@ -22,8 +22,7 @@ namespace wpf_tutorial_com
         public CommandSample()
         {
             InitializeComponent();
-            //TODO: TESTE DE
-            //test
+            
         }
 
     }
